@@ -3,7 +3,6 @@ package controladores;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Scanner;
 
 import entidades.Trabajador;
 import servicios.ImplMenu;
@@ -23,9 +22,6 @@ public class Main {
 		// lista
 		List<Trabajador> listaTrabajadores = new ArrayList();
 
-		// capturar
-		//1Scanner sc = new Scanner(System.in);
-
 		// declaracion variables
 		int num;
 		boolean verdad = true;
@@ -33,10 +29,8 @@ public class Main {
 		try {
 
 			do {
-
-				//implMenu.Menu();
-				//num = sc.nextInt();
-				num = implMenu.Menu();
+				implMenu.Menu();
+				num = implTrabajador.CapturaEntero("Elige una opcion");				
 
 				switch (num) {
 

@@ -14,4 +14,6 @@ public interface InterfaceTrabajador {
 	
 	//exporta la lista a un fichero
 	void ExportarFichero (List <Trabajador> lista);	
+
+	int CapturaEntero(String txt);
 }

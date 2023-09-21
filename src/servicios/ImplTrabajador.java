@@ -47,13 +47,20 @@ public class ImplTrabajador implements InterfaceTrabajador {
 
 	private void CargarTrabajador(Trabajador empleado) {
 
-		empleado.setNombre(CapturaString("Introduce el nombre del Trabajador"));
-		empleado.setApellidos(CapturaString("Introduce el apellido del Trabajador"));
-		empleado.setDni(CapturaString("Introduce el DNI del Trabajador"));
-		empleado.setFechaNacimiento(CapturaString("Introduce la fecha de nacimiento del Trabajador"));
-		empleado.setTitulacionMasAlta(CapturaString("Introduce la titulacion mas alta del Trabajador"));
-		empleado.setnSS(CapturaEntero("Introduce el Nº de la Seguridad Social del Trabajador"));
-		empleado.setnCuenta(CapturaString("Introduce el Nº de cuenta del Trabajador"));
+		/*
+		 * empleado.setNombre(CapturaString("Introduce el nombre del Trabajador"));
+		 * empleado.setApellidos(CapturaString("Introduce el apellido del Trabajador"));
+		 * empleado.setDni(CapturaString("Introduce el DNI del Trabajador"));
+		 * empleado.setFechaNacimiento(
+		 * CapturaString("Introduce la fecha de nacimiento del Trabajador"));
+		 * empleado.setTitulacionMasAlta(
+		 * CapturaString("Introduce la titulacion mas alta del Trabajador"));
+		 */
+		CapturaEntero("Introduce el Nº de la Seguridad Social del Trabajador");
+		// empleado.setnSS(CapturaEntero("Introduce el Nº de la Seguridad Social del
+		// Trabajador"));
+		// empleado.setnCuenta(CapturaString("Introduce el Nº de cuenta del
+		// Trabajador"));
 
 	}
 
@@ -64,19 +71,25 @@ public class ImplTrabajador implements InterfaceTrabajador {
 		return sc.next();
 	}
 
-	private int CapturaEntero(String txt) {
+	public int CapturaEntero(String txt) {
 
-		Scanner sc = new Scanner(System.in);
+		int num = 0;
+		Scanner teclado = new Scanner(System.in);
+		
+		boolean continua;
+		do {
+			try {
+				continua = false;
+				System.out.print("\n\t" + txt + ": ");
+				num = teclado.nextInt();
+			} catch (InputMismatchException ex) {
+				System.out.println("\n\tSe produjo un error de formato: " + ex);
+				teclado.next();
+				continua = true;
+			}
+		} while (continua);
 
-		try {
-
-			System.out.print("\n\t" + txt + ": ");
-
-		} catch (InputMismatchException e) {
-			System.out.println("\tSe produjo un error de formato: " + e.getMessage());
-		}
-
-		return sc.nextInt();
+		return num;
 	}
 
 }
