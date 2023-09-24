@@ -15,6 +15,9 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		//prueba ++++ ----
+		
+		
 		// implementaciones
 		InterfaceMenu implMenu = new ImplMenu();
 		InterfaceTrabajador implTrabajador = new ImplTrabajador();
