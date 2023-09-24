@@ -1,5 +1,8 @@
 package controladores;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -12,12 +15,9 @@ import servicios.InterfaceTrabajador;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
-		//prueba ++++ ----
-		
-		
 		// implementaciones
 		InterfaceMenu implMenu = new ImplMenu();
 		InterfaceTrabajador implTrabajador = new ImplTrabajador();
@@ -28,6 +28,9 @@ public class Main {
 		// declaracion variables
 		int num;
 		boolean verdad = true;
+		
+		//fichero
+		File archivoTxt = new File("ficheroTrabajadores.txt");
 
 		try {
 
@@ -49,7 +52,7 @@ public class Main {
 
 				//exportar fichero
 				case 3:
-					implTrabajador.ExportarFichero(listaTrabajadores);
+					implTrabajador.ExportarFichero(listaTrabajadores,archivoTxt);
 					break;
 				}
 

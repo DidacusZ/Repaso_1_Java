@@ -1,5 +1,7 @@
 package servicios;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.util.List;
 
 import entidades.Trabajador;
@@ -13,7 +15,7 @@ public interface InterfaceTrabajador {
 	List <Trabajador> ModificarTrabajador (List <Trabajador> lista);
 	
 	//exporta la lista a un fichero
-	void ExportarFichero (List <Trabajador> lista);	
+	void ExportarFichero (List <Trabajador> lista,File archivoTxt);	
 
 	int CapturaEntero(String txt);
 }
