@@ -17,5 +17,6 @@ public interface InterfaceTrabajador {
 	//exporta la lista a un fichero
 	void ExportarFichero (List <Trabajador> lista,File archivoTxt);	
 
+	//captura unicamente enteros(int)
 	int CapturaEntero(String txt);
 }

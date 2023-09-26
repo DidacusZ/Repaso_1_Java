@@ -9,12 +9,12 @@ public class Trabajador {
 	String dni;
 	String fechaNacimiento;
 	String titulacionMasAlta;
-	int nSS;
+	long nSS;
 	String nCuenta;
 	
 	//contructor lleno
 	public Trabajador(int id, String nombre, String apellidos, String dni, String fechaNacimiento,
-			String titulacionMasAlta, int nSS, String nCuenta) {
+			String titulacionMasAlta, long nSS, String nCuenta) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -33,51 +33,51 @@ public class Trabajador {
 	}
 	
 	//getters y setters
-	public int getId() {
-		return id;
-	}
+//	public int getId() {
+//		return id;
+//	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getNombre() {
-		return nombre;
-	}
+//	public String getNombre() {
+//		return nombre;
+//	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getApellidos() {
-		return apellidos;
-	}
+//	public String getApellidos() {
+//		return apellidos;
+//	}
  	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-	public String getDni() {
-		return dni;
-	}
+//	public String getDni() {
+//		return dni;
+//	}
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
-	public String getFechaNacimiento() {
-		return fechaNacimiento;
-	}
+//	public String getFechaNacimiento() {
+//		return fechaNacimiento;
+//	}
 	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-	public String getTitulacionMasAlta() {
-		return titulacionMasAlta;
-	}
+//	public String getTitulacionMasAlta() {
+//		return titulacionMasAlta;
+//	}
 	public void setTitulacionMasAlta(String titulacionMasAlta) {
 		this.titulacionMasAlta = titulacionMasAlta;
 	}
-	public int getnSS() {
-		return nSS;
-	}
-	public void setnSS(int nSS) {
+//	public int getnSS() {
+//		return nSS;
+//	}
+	public void setnSS(long nSS) {
 		this.nSS = nSS;
 	}
-	public String getnCuenta() {
-		return nCuenta;
-	}
+//	public String getnCuenta() {
+//		return nCuenta;
+//	}
 	public void setnCuenta(String nCuenta) {
 		this.nCuenta = nCuenta;
 	}

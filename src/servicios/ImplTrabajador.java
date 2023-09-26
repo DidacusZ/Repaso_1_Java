@@ -15,20 +15,18 @@ public class ImplTrabajador implements InterfaceTrabajador {
 	public List<Trabajador> AddTrabajador(List<Trabajador> lista) {
 		// TODO Auto-generated method stub-
 
-		Trabajador empleado2 = new Trabajador(1, "pepe", "botella", "12512521s", "02-04-2032", "bachiller", 2134532145,
-				"ES24151241234234");
-
-		Trabajador empleado3 = new Trabajador(2, "asdasd", "botella", "12512521s", "02-04-2032", "bachiller",
-				2134532145, "ES24151241234234");
-
+		/*
+		//empleados de prueba
+		Trabajador empleado2 = new Trabajador(1, "pepe", "botella", "12512521s", "02-04-2032", "bachiller", 2134532145,"ES24151241234234");
+		Trabajador empleado3 = new Trabajador(2, "asdasd", "botella", "12512521s", "02-04-2032", "bachiller",2134532145, "ES24151241234234");
 		lista.add(empleado2);
 		lista.add(empleado3);
+		*/
 
-		/*
-		 * Trabajador empleado = new Trabajador(); empleado.setId(lista.size() + 1);//id
-		 * = tamaño lista + 1 CargarTrabajador(empleado);// rellena el resto de los
-		 * datos lista.add(empleado);
-		 */
+		Trabajador empleado = new Trabajador();
+		empleado.setId(lista.size() + 1);// id = tamaño lista + 1
+		CargarTrabajador(empleado);// rellena el resto de los datos
+		lista.add(empleado);	 
 
 		return lista;
 	}
@@ -95,33 +93,29 @@ public class ImplTrabajador implements InterfaceTrabajador {
 	public void ExportarFichero(List<Trabajador> lista,File archivoTxt) {
 		// TODO Auto-generated method stub
 
-		for (int i = 0; i < lista.size(); i++) {
-
+		archivoTxt.delete();//borra el fichero si existe
+		
+		//muestra los trabajadores
+		for (int i = 0; i < lista.size(); i++)
 			System.out.println("\t" + lista.get(i).toString());
-		}
+		
 
 		// guadar datos en el fichero
-
 		FileWriter fichero = null;
 
 		try {
-
 			fichero = new FileWriter(archivoTxt, true);//ruta
 
 		} catch (Exception e) {
-
 			e.printStackTrace();
 		}
 		
 		try {
-			PrintWriter escribir = new PrintWriter(fichero);// para escribir en fichero
-
+			PrintWriter escribir = new PrintWriter(fichero);//para escribir en fichero
 			escribir.println("id,nombre;apellidos;DNI;fecha nacimiento;titulacion mas alta;numero cuenta");
 
-			for (int i = 0; i < lista.size(); i++) {
-
-				escribir.println(lista.get(i).toString());
-			}
+			for (int i = 0; i < lista.size(); i++)
+				escribir.println(lista.get(i).toString());			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -152,13 +146,6 @@ public class ImplTrabajador implements InterfaceTrabajador {
 
 	}
 
-	private String CapturaString(String txt) {
-
-		Scanner sc = new Scanner(System.in);
-		System.out.print("\n\t" + txt + ": ");
-		return sc.next();
-	}
-
 	private void MenuMod() {
 
 		System.out.println("\n¿Que quieres modificar?");
@@ -171,6 +158,13 @@ public class ImplTrabajador implements InterfaceTrabajador {
 		System.out.println("\t7. Numero de cuenta");
 		System.out.println("\t8. todos");
 		System.out.println("\t0. volver al menu");
+	}
+	
+	private String CapturaString(String txt) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("\n\t" + txt + ": ");
+		return sc.next();
 	}
 
 	public int CapturaEntero(String txt) {
